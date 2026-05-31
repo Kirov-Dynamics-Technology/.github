@@ -1,0 +1,26 @@
+# RepoPulse AI Operating System Configuration
+# Autonomous GitHub CI/CD analysis and self-healing pipelines
+
+version: "1.0"
+analysis:
+  schedule: "0 8 * * 1"
+  depth: full
+  scan:
+    - dependencies
+    - security
+    - ci_health
+    - code_quality
+    - documentation
+
+remediation:
+  auto_fix_minor: true
+  auto_pr_security: true
+  max_prs_per_run: 5
+
+notifications:
+  slack:
+    enabled: false
+    webhook: ""
+  email:
+    enabled: true
+    address: "402106633@my.richfield.ac.za"

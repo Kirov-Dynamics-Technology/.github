@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kirov-platform
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: repopulse-engine
+  namespace: kirov-platform
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: repopulse
+  template:
+    metadata:
+      labels:
+        app: repopulse
+    spec:
+      containers:
+      - name: engine
+        image: ghcr.io/raphasha27/repopulse:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: GITHUB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: github-token
+              key: token
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: repopulse-service
+  namespace: kirov-platform
+spec:
+  selector:
+    app: repopulse
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: LoadBalancer
