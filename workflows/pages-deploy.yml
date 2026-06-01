@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+on:
+  workflow_call:
+    inputs:
+      build-command:
+        required: false
+        type: string
+        default: ""
+      output-dir:
+        required: false
+        type: string
+        default: ""
+      node-version:
+        required: false
+        type: string
+        default: "20"
+      deploy-from-root:
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - if: inputs.build-command != ''
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - if: inputs.build-command != ''
+        run: |
+          npm ci
+          ${{ inputs.build-command }}
+
+      - uses: actions/configure-pages@v5
+
+      - if: inputs.deploy-from-root
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - if: inputs.output-dir != ''
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ inputs.output-dir }}
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

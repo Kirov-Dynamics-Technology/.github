@@ -1,0 +1,49 @@
+name: RepoPulse AI Analysis
+
+on:
+  schedule:
+    - cron: "0 8 * * 1"
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: RepoPulse Scan
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const core = require('@actions/core');
+            core.notice('RepoPulse analysis starting...');
+
+            const { data: workflows } = await github.rest.actions.listRepoWorkflows({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+
+            core.info(`Found ${workflows.total_count} workflows`);
+            for (const wf of workflows.workflows) {
+              const { data: runs } = await github.rest.actions.listWorkflowRuns({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: wf.id,
+                per_page: 3,
+              });
+              const status = runs.workflow_runs.map(r => `${r.conclusion || r.status}`).join(', ');
+              core.info(`${wf.name}: ${status || 'no runs'}`);
+            }
+
+            const { data: alerts } = await github.rest.dependabot.listAlertsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+            });
+            core.info(`Dependabot alerts: ${alerts.length}`);
+
+            if (alerts.length > 0) {
+              core.warning(`${alerts.length} open Dependabot alerts found`);
+            }
+
+            core.notice('RepoPulse analysis complete');
