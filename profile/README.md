@@ -1,22 +1,30 @@
-# Kirov Dynamics - Global Enterprise Templates
+# Kirov Dynamics Technology
 
-## Overview
-This repository contains the shared GitHub health files, issue templates, CI/CD workflows, and security configurations used across all Kirov Dynamics Technology and Raphasha27 repositories.
+**AI, Security, and Infrastructure for the African Digital Economy**
 
-## Contents
+Kirov Dynamics builds cutting-edge technology solutions — from AI-powered security platforms to cloud infrastructure — driving the next wave of digital transformation across Africa.
 
-### `.github/` - GitHub Community Health Files
-- `ISSUE_TEMPLATE/` - Standardized issue templates for bugs, features, and security
-- `PULL_REQUEST_TEMPLATE.md` - PR template with checklist
-- `workflows/` - Reusable CI/CD workflows
+---
 
-### Security
-- `SECURITY.md` - Security policy and disclosure process
-- `dependabot.yml` - Automated dependency management
+### Focus Areas
 
-## Using These Templates
+| Area | Description |
+|------|-------------|
+| **AI & Machine Learning** | Autonomous agents, AI SDKs, algorithmic research |
+| **Cybersecurity** | SOC platforms, malware analysis, network defense, OSINT, threat intelligence |
+| **Cloud Infrastructure** | Monitoring, observability, secure API gateways, endpoint agents |
+| **Developer Tools** | CLI tools, SDKs, authentication libraries, vulnerability scanners |
 
-These files are automatically applied by GitHub to all public repositories in the Raphasha27 organization. To customize for a specific repo, override the file in that repo's `.github/` directory.
+### Featured Repositories
 
-## License
-MIT - See individual repo licenses for details.
+| Repo | Description |
+|------|-------------|
+| [kirov-security-core](https://github.com/Kirov-Dynamics-Technology/kirov-security-core) | Unified security core with auth, scanning, AI assistant, and alerting |
+| [kirov-ai-sdk](https://github.com/Kirov-Dynamics-Technology/Kirov-AI-SDK) | Python SDK for building AI agents with tool calling and memory |
+| [kirov-cli](https://github.com/Kirov-Dynamics-Technology/kirov-cli) | Rust CLI for managing the Kirov Dynamics AI ecosystem |
+| [kirov-security-dashboard](https://github.com/Kirov-Dynamics-Technology/kirov-security-dashboard) | Centralized SOC dashboard with real-time monitoring and incident response |
+| [kirov-dynamics](https://github.com/Kirov-Dynamics-Technology/kirov-dynamics) | Ecosystem overview and documentation |
+
+---
+
+*Co-founded by @Raphasha27 and @KirovDynamicsTechnology*
