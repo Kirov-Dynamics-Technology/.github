@@ -1,8 +1,8 @@
 # Kirov Dynamics Technology
 
-**AI, Security, and Infrastructure for the African Digital Economy**
+**A Proudly South African Tech Company: AI, Security, and Infrastructure for the African Digital Economy**
 
-Kirov Dynamics builds cutting-edge technology solutions — from AI-powered security platforms to cloud infrastructure — driving the next wave of digital transformation across Africa.
+Kirov Dynamics builds cutting-edge technology solutions using Information Technology and Artificial Intelligence. From AI-powered security platforms to cloud infrastructure, we are driving the next wave of digital transformation across Africa.
 
 ---
 
