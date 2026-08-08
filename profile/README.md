@@ -27,4 +27,12 @@ Kirov Dynamics builds cutting-edge technology solutions using Information Techno
 
 ---
 
-*Co-founded by @Raphasha27 and @KirovDynamicsTechnology*
+## 🤝 Team & Contributors
+
+Our ecosystem thrives on collaboration. We believe in sharing credit across the team—every repository is a collective effort.
+
+- [@Raphasha27](https://github.com/Raphasha27) — Co-Founder & Lead Engineer
+- [@KirovDynamicsTechnology](https://github.com/KirovDynamicsTechnology) — System Admin & Maintainer
+- [@kirov-admin](https://github.com/kirov-admin) — Automated CI/CD & Security Agent
+
+*(Note: See individual repositories for project-specific team members and roles based on commit history.)*
