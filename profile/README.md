@@ -32,7 +32,9 @@ Kirov Dynamics builds cutting-edge technology solutions using Information Techno
 Our ecosystem thrives on collaboration. We believe in sharing credit across the team—every repository is a collective effort.
 
 - [@Raphasha27](https://github.com/Raphasha27) — Co-Founder & Lead Engineer
+- [@DkMash](https://github.com/DkMash) — Teammate & Co-Developer
 - [@KirovDynamicsTechnology](https://github.com/KirovDynamicsTechnology) — System Admin & Maintainer
+- [@LindiweMotaung](https://github.com/LindiweMotaung) — Collaborator
 - [@kirov-admin](https://github.com/kirov-admin) — Automated CI/CD & Security Agent
 
 *(Note: See individual repositories for project-specific team members and roles based on commit history.)*
